@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author reroes
  */
-public class Ejemplo02 {
+public class Ejemplo0211 {
 
     /**
      * @param args the command line arguments
@@ -22,6 +22,7 @@ public class Ejemplo02 {
         Scanner entrada = new Scanner(System.in);
         entrada.useLocale(Locale.US);
 
+        // forma 1
         // forma 1
         int[][] arreglo1 = new int[3][4]; //
         int valor;
@@ -38,7 +39,13 @@ public class Ejemplo02 {
                 System.out.printf("Ingrese numero para posicion [%d][d]",
                         f, c);
                 valor = entrada.nextInt();
-                arreglo1[f][c] = valor;
+                if (valor >= 10 && valor % 2 == 0) {
+                    arreglo1[f][c] = 0;
+
+                } else {
+                    arreglo1[f][c] = valor;
+
+                }
 
             }
         }
@@ -47,10 +54,9 @@ public class Ejemplo02 {
             for (int col = 0; col < arreglo1[fila].length; col++) {
                 System.out.printf("fila[%d] columna[%d] = %d\n",
                         fila, col, arreglo1[fila][col]
-                      );
+                );
             }
         }
-
     }
 
 }
